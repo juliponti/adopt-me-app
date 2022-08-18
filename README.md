@@ -1,6 +1,6 @@
 # adopt-me-app
 
-<p> This is an WIP react app developed by me following the Frontend masters' React course 'Complete Intro to React v6' </p>
+This is an WIP react app developed by me following the [Frontend masters'](https://frontendmasters.com/dashboard/) React course 'Complete Intro to React v6'
 
 ## Concepts
 * Vanilla React Setup
