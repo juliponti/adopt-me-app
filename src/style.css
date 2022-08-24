@@ -13,16 +13,18 @@ body {
 .search-params {
   width: 1100px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-params form {
   border-radius: 6px;
   background: #faeff0;
-  box-shadow: 0px 0px 12px #aaa, -0px -0px 12px #fff;
+  box-shadow: 0px 0px 12px #aaa, -0px -0px 8px #fff;
   width: 360px;
-  margin: 0px 25px 0px 0px;
-  padding: 35px 15px 15px 15px;
-  float: left;
+  padding: 35px 15px 35px 15px;
 }
 
 .search {
@@ -181,10 +183,25 @@ header {
 
 .search-params input,
 .search-params select {
-  margin-bottom: 30px;
-  font-size: 18px;
   height: 30px;
   width: 325px;
+
+  padding: 0 5px;
+  margin-top: 2px;
+  margin-bottom: 14px;
+
+  border-radius: 4px;
+
+  font-size: 18px;
+}
+
+.search-params > div {
+  width: 100%;
+}
+
+.search-params > div > h1 {
+  margin: 20px auto;
+  width: fit-content;
 }
 
 .search-params button,
@@ -202,6 +219,16 @@ header {
   cursor: pointer;
 }
 
+div.page-btn__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+div button.page-btn {
+  margin: 19px 0;
+}
+
 #modal a {
   display: inline-block;
   margin-right: 15px;
@@ -210,6 +237,11 @@ header {
 
 .search-params button:hover {
   background-color: #122622;
+}
+
+.search-params button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .search-params button:active {

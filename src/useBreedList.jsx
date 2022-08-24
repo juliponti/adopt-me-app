@@ -19,10 +19,17 @@ function useBreedList(animal) {
       setBreedList([]);
       setStatus("loading");
       const res = await fetch(
-        `http://pets-v2.dev-apis.com/breeds?animal=${animal}`
+        `https://api.petfinder.com/v2/types/${animal}/breeds`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
+          },
+        }
       );
 
       const json = await res.json();
+
       localCache[animal] = json.breeds || [];
 
       setBreedList(localCache[animal]);

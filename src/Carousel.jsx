@@ -6,7 +6,7 @@ class Carousel extends Component {
   };
 
   static defaultProps = {
-    images: ["http://pets-images.dev-apis.com/pets/none.jpg"],
+    images: ["https://via.placeholder.com/150x150"],
   };
 
   handleIndexClick = (e) => {
@@ -18,17 +18,18 @@ class Carousel extends Component {
   render() {
     const { active } = this.state;
     const { images } = this.props;
+    const activeImage = images[active];
 
     return (
       <div className="carousel">
-        <img src={images[active]} alt="animal" />
+        <img src={activeImage?.large} alt="animal" />
         <div className="carousel-smaller">
           {images.map((photo, index) => (
             //eslint-disable-next-line
             <img
               onClick={this.handleIndexClick}
-              key={photo}
-              src={photo}
+              key={photo.small}
+              src={photo.small}
               data-index={index}
               className={index === active ? "active" : ""}
               alt="animal thumbnail"
